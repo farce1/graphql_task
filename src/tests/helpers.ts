@@ -2,7 +2,6 @@ import { apollo } from '../server'
 import { prisma } from '../context'
 import { Headers } from 'cross-fetch'
 
-// @ts-ignore
 global.Headers = global.Headers || Headers
 
 type Config = { url: string }
