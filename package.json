@@ -4,14 +4,6 @@
   "main": "index.js",
   "author": "Grzegorz Sztuczyński",
   "license": "MIT",
-  "dependencies": {
-    "@prisma/client": "^3.3.0",
-    "apollo-server": "^3.4.0",
-    "dotenv": "10.0.0",
-    "graphql": "^15.6.1",
-    "reflect-metadata": "^0.1.13",
-    "type-graphql": "^1.1.1"
-  },
   "scripts": {
     "dev": "nodemon --exec ts-node-dev --no-notify --respawn --transpile-only src/index.ts",
     "test": "dotenv -e .env.test -- jest",
@@ -20,6 +12,14 @@
     "db:migrate": "yarn prisma migrate dev --preview-feature",
     "db:migrate:prod": "yarn prisma migrate deploy --preview-feature",
     "postinstall": "yarn generate:prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.3.0",
+    "apollo-server": "^3.4.0",
+    "dotenv": "10.0.0",
+    "graphql": "^15.6.1",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
