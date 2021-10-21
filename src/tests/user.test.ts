@@ -12,8 +12,16 @@ import { getConfig } from './helpers'
 const config = getConfig()
 test.each([
   ['users with posts', getUsersWithPosts, UsersWithPosts],
-  ['users with name and surname',getUsersWithNameAndSurname, UsersWithNameAndSurname],
-  ['users with posts and username',getUsersAndPostsWithUser, UsersAndPostsWithUser]
+  [
+    'users with name and surname',
+    getUsersWithNameAndSurname,
+    UsersWithNameAndSurname
+  ],
+  [
+    'users with posts and username',
+    getUsersAndPostsWithUser,
+    UsersAndPostsWithUser
+  ]
 ])('should return %p', async (_, graphqlQuery, mockedData) => {
   const data: any = await request(config.url, graphqlQuery)
 
