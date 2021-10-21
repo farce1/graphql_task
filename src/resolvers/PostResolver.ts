@@ -10,7 +10,7 @@ import {
   Root,
   Int
 } from 'type-graphql'
-import { Context } from '../context'
+import { Context } from 'types'
 
 @Resolver(Post)
 export class PostResolver {

@@ -7,16 +7,27 @@
   "dependencies": {
     "@prisma/client": "^3.3.0",
     "apollo-server": "^3.4.0",
+    "dotenv": "10.0.0",
     "graphql": "^15.6.1",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1"
   },
   "scripts": {
-    "dev": "nodemon --exec ts-node-dev --no-notify --respawn --transpile-only src/index.ts"
+    "dev": "nodemon --exec ts-node-dev --no-notify --respawn --transpile-only src/index.ts",
+    "generate:prisma": "prisma generate",
+    "db:save": "yarn prisma migrate dev --create-only --preview-feature",
+    "db:migrate": "yarn prisma migrate dev --preview-feature",
+    "db:migrate:prod": "yarn prisma migrate deploy --preview-feature",
+    "postinstall": "yarn generate:prisma"
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
+    "@types/jest": "27.0.2",
     "@types/node": "^16.11.1",
+    "cross-env": "7.0.3",
+    "cross-fetch": "^3.1.4",
+    "dotenv-cli": "4.0.0",
+    "graphql-request": "3.4.0",
     "nodemon": "^2.0.14",
     "prettier": "2.4.1",
     "prisma": "^3.3.0",

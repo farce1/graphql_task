@@ -7,7 +7,7 @@ export class Post {
   @Field(() => ID)
   id: number
 
-  @Field(() => String)
+  @Field()
   name: string
 
   @Field(() => String, { nullable: true })

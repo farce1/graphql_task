@@ -1,17 +1,12 @@
-import 'reflect-metadata'
-import * as tq from 'type-graphql'
-import { ApolloServer } from 'apollo-server'
-import { context } from './context'
-import { UserResolver } from './resolvers/UserResolver'
-import { PostResolver } from './resolvers/PostResolver'
+import { apollo } from './server'
+
+const PORT = process.env.PORT || 4000
 
 const app = async () => {
-  const schema = await tq.buildSchema({
-    resolvers: [UserResolver, PostResolver]
-  })
+  const api = await apollo()
 
-  new ApolloServer({ schema, context: context }).listen({ port: 4000 }, () =>
-    console.log(`🚀 Server ready at: http://localhost:4000`)
+  api.listen({ port: PORT }, () =>
+    console.log(`🚀 Server ready at: http://localhost:${PORT}`)
   )
 }
 
