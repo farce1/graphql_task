@@ -45,15 +45,14 @@ const userData: Prisma.UserCreateInput[] = [
   }
 ]
 
-async function main() {
-  console.log(`Generator started ...`)
+const main = async () => {
   for (const u of userData) {
     const user = await prisma.user.create({
       data: u
     })
     console.log(`Created user with id: ${user.id}`)
   }
-  console.log(`Generator finished.`)
+  console.log(`Generator stop.`)
 }
 
 main()
