@@ -104,4 +104,7 @@ dist
 .tern-port
 
 dist
-database.sqlite
+
+# Prisma
+prisma/migrations/
+prisma/dev.db

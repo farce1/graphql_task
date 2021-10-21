@@ -1,16 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
+import 'reflect-metadata'
+import { ObjectType, Field, ID } from 'type-graphql'
+import { Post } from './Post'
 
-@Entity()
+@ObjectType()
 export class User {
-  @PrimaryGeneratedColumn()
+  @Field(() => ID)
   id: number
 
-  @Column()
-  firstName: string
+  @Field(() => String)
+  name: string
 
-  @Column()
-  lastName: string
+  @Field(() => String)
+  surname: string
 
-  @Column()
-  age: number
+  @Field(() => [Post], { nullable: true })
+  posts?: [Post] | null
 }
