@@ -1,5 +1,6 @@
 import 'reflect-metadata'
-import { Post, User } from 'entity'
+import { Post } from '../entity/Post'
+import { User } from '../entity/User'
 import {
   Resolver,
   Query,
@@ -7,20 +8,9 @@ import {
   Ctx,
   FieldResolver,
   Root,
-  Int,
-  InputType,
-  Field
+  Int
 } from 'type-graphql'
 import { Context } from '../context'
-
-@InputType()
-export class PostCreateInput {
-  @Field()
-  name: string
-
-  @Field({ nullable: true })
-  description: string
-}
 
 @Resolver(Post)
 export class PostResolver {
