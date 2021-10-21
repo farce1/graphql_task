@@ -7,18 +7,19 @@ global.Headers = global.Headers || Headers
 
 type Config = { url: string }
 
-export const getConfig = async () => {
+export const getConfig = () => {
   let config: any = {}
-  const server = await apollo()
+  let server: any
 
   beforeAll(async () => {
-    const { url } = await server.listen({ port: 0 })
+    server = await apollo()
+    const { url } = await server.listen({ port: 8001 })
     config.url = url
     return config
   })
 
   afterAll(async () => {
-    await server.stop()
+    server.stop()
     return prisma.$disconnect()
   })
 

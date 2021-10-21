@@ -9,10 +9,12 @@ export const getUsersWithPosts = `
     }
 `
 
-export const getUsers = `
+export const getUsersWithNameAndSurname = `
     query users {
-        name
-        surname
+        users {
+            name
+            surname
+        }
     }
 `
 

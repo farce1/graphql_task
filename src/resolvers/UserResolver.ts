@@ -2,7 +2,7 @@ import 'reflect-metadata'
 import { Post } from '../entity/Post'
 import { User } from '../entity/User'
 import { Resolver, Query, Ctx, FieldResolver, Root } from 'type-graphql'
-import { Context } from 'types'
+import { Context } from '../types'
 
 @Resolver(User)
 export class UserResolver {
